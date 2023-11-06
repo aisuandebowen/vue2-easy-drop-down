@@ -5403,11 +5403,6 @@ launch-editor@^2.2.1, launch-editor@^2.6.1:
     picocolors "^1.0.0"
     shell-quote "^1.8.1"
 
-less-loader@^11.1.3:
-  version "11.1.3"
-  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-11.1.3.tgz#1bb62d6ca9bf00a177c02793b54baac40f9be694"
-  integrity sha512-A5b7O8dH9xpxvkosNrP0dFp2i/dISOJa9WwGF3WJflfqIERE2ybxh1BFDj5CovC2+jCE4M354mk90hN6ziXlVw==
-
 levn@^0.3.0, levn@~0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/levn/-/levn-0.3.0.tgz#3b09924edf9f083c0490fdd4c0bc4421e04764ee"
@@ -8566,10 +8561,10 @@ vue-template-es2015-compiler@^1.9.0:
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
   integrity sha512-4gDntzrifFnCEvyoO8PqyJDmguXgVPxKiIxrBKjIowvL9l+N66196+72XVYR8BBf1Uv1Fgt3bGevJ+sEmxfZzw==
 
-vue2-easy-print@^2.0.2:
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/vue2-easy-print/-/vue2-easy-print-2.0.2.tgz#f3401c4305e7c84b4ec13def6085062c3a9eaf18"
-  integrity sha512-250D1RlKbT827oqehpH7qw2ruFp9kVUIMCka3NTr9dOQ44yLPM77ODCicjaEXQBEvY6u+KfN0EmVHfeH9smoIg==
+vue2-easy-drop-down@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/vue2-easy-drop-down/-/vue2-easy-drop-down-0.1.0.tgz#bfbc133c65ed7206e22e1eb5d029ea895007571c"
+  integrity sha512-RwbmF/ylC+5J/CTpmWKtKgoIk51HpNk9Xb3dg07MqXS5h32lqyBE9udAHG4qeKLVuuZvlgypHpqIB7YO6NpRww==
   dependencies:
     core-js "^3.6.5"
     vue "^2.6.11"
