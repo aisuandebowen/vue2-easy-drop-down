@@ -1,24 +1,23 @@
 # drop-down
+a easy drop down components
+## install
+main.js
+```js
+import Vue from 'vue'
+import App from './App.vue'
+import DropDown from "../drop-down";
 
-## Project setup
-```
-yarn install
-```
+Vue.use(DropDown);
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+new Vue({
+  render: h => h(App),
+}).$mount('#app')
 
-### Compiles and minifies for production
 ```
-yarn build
+## usage
+```Vue
+<DropDown>
+  <h1>你好</h1>
+  <div slot="overlay" class="menu"></div>
+</DropDown>
 ```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
