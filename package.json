@@ -1,7 +1,10 @@
 {
-  "name": "drop-down",
+  "name": "vue2-easy-drop-down",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "author": "Boen Chen",
+  "description": "a drop down compoent",
+  "main": "lib/drop-down.umd.min",
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
