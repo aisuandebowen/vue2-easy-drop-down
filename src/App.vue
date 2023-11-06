@@ -1,18 +1,30 @@
+<!--
+ * @Author: cbw
+ * @Date: 2023-11-06 19:06:42
+ * @LastEditors: cbw
+ * @LastEditTime: 2023-11-06 19:08:46
+ * @Description: 
+-->
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <DropDown>
+      <h1>你好</h1>
+      <h1>你好</h1>
+      <h1>你好</h1>
+      <h1>你好</h1>
+      <h1>你好</h1>
+      <h1>你好</h1>
+
+      <div slot="overlay" class="menu"></div>
+    </DropDown>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
 }
 </script>
 
@@ -24,5 +36,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.menu{
+  background-color: rosybrown;
+  width: 100px;
+  height: 100px;
 }
 </style>
