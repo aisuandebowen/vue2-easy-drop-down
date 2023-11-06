@@ -50,6 +50,7 @@ export default {
     const overlayDOM = this.$refs.overlay;
     document.body.appendChild(overlayDOM);
     this.listenEvent();
+    this.closeOverlay();
   },
   methods: {
     /**
