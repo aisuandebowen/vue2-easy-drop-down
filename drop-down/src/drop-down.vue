@@ -1,7 +1,7 @@
 <template>
   <div class="drop-down">
     <!-- 绑定位置 -->
-    <div class="right-loc" v-on="triggerEvent">
+    <div class="right-loc" ref="content">
       <slot> </slot>
     </div>
 
@@ -28,9 +28,9 @@ export default {
       /** 右键菜单显隐 */
       overlayVisible: false,
       /** 触发事件 */
-      triggerEvent: {
-        contextmenu: this.onContextmenu,
-      },
+      // triggerEvent: {
+      //   contextmenu: this.onContextmenu,
+      // },
       /** 右键菜单样式 */
       overlayStyle: {
         position: "absolute",
@@ -47,10 +47,10 @@ export default {
     };
   },
   mounted() {
+    this.closeOverlay();
     const overlayDOM = this.$refs.overlay;
     document.body.appendChild(overlayDOM);
     this.listenEvent();
-    this.closeOverlay();
   },
   methods: {
     /**
@@ -62,6 +62,12 @@ export default {
         document.body,
         "click",
         this.onDocumentClick
+      );
+      /** 文档右键 */
+      this.listeners.body = addEventListener(
+        document.body,
+        "contextmenu",
+        this.onContextmenu
       );
       /** window失焦 */
       this.listeners.window = addEventListener(
@@ -95,13 +101,18 @@ export default {
      * 鼠标右键
      */
     onContextmenu(e) {
-      e.preventDefault();
-      this.closeOverlay();
-      this.openOverlay();
-      const next = () => {
-        this.calculateLoc(e);
-      };
-      this.$nextTick(next);
+      // 点击事件在菜单外
+      if (contain(this.$refs.content, e.target)) {
+        e.preventDefault();
+        this.closeOverlay();
+        this.openOverlay();
+        const next = () => {
+          this.calculateLoc(e);
+        };
+        this.$nextTick(next);
+      } else {
+        this.closeOverlay();
+      }
     },
     /**
      * 打开菜单
@@ -122,6 +133,7 @@ export default {
         opacity: "0",
         height: "0",
         width: "0",
+        display: "none",
       };
     },
     /**
@@ -142,6 +154,7 @@ export default {
       this.overlayStyle.width = "auto";
       this.overlayStyle.visibility = "visible";
       this.overlayStyle.opacity = "1";
+      this.overlayStyle.display = "block";
     },
 
     /**
@@ -206,6 +219,6 @@ export default {
 };
 </script>
 
-<style scoped>
-@import "./drop-down.css";
+<style lang="less" scoped>
+@import "./drop-down.less";
 </style>
